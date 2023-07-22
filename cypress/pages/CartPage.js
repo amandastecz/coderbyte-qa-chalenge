@@ -9,7 +9,8 @@ export default class CartPage{
         this.inputOrderCardMonth = '[id="month"]',
         this.inputOrderCardYear = '[id="year"]',
         this.buttonOrderPurchase = '#orderModal > div > div > div.modal-footer > button.btn.btn-primary',
-        this.diplayThankYouPurchase = 'body > div.sweet-alert.showSweetAlert.visible'
+        this.diplayThankYouPurchase = 'body > div.sweet-alert.showSweetAlert.visible > p',
+        this.total = '#totalp'
     }
 
     removeAProductFromCart(indice){
@@ -38,5 +39,24 @@ export default class CartPage{
         cy.get(this.inputOrderCardMonth).type(cardMonth);
         cy.get(this.inputOrderCardYear).type(cardYear);
         cy.get(this.buttonOrderPurchase).click();
+    }
+
+    validateConfirmationPopupInfo(params){
+        const {
+            name,
+            cardNumber
+          } = params;
+          let total;
+          cy.get(this.total).invoke('text').then((text) => {
+            total = text;
+          });
+        cy.get(this.diplayThankYouPurchase).invoke('html').then((html) => {
+            const infoArray = html.split('<br>');
+            const cleanedInfoArray = infoArray.map((info) => Cypress.$('<div>').html(info).text().trim());
+            expect(cleanedInfoArray).to.include(`Card Number: ${cardNumber}`);
+            expect(cleanedInfoArray).to.include(`Name: ${name}`);
+            expect(cleanedInfoArray).to.include(`Amount: ${total} USD`);
+        });
+        
     }
 }
