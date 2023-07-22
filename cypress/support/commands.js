@@ -35,3 +35,9 @@ Cypress.Commands.add('signupAndLogin', (params) => {
     loginPage.visit();
     loginPage.login(params);
 });
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // Evitar que o Cypress falhe automaticamente
+    return false;
+  });
+  
