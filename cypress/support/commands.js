@@ -1,3 +1,6 @@
+import LoginPage from "../pages/LoginPage";
+import SignupPage from "../pages/SignUpPage";
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,3 +26,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('signupAndLogin', (params) => {
+    const signupPage = new SignupPage();
+    const loginPage = new LoginPage();
+    signupPage.visit();
+    signupPage.signup(params);
+    loginPage.visit();
+    loginPage.login(params);
+});

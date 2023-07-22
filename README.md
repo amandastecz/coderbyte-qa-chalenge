@@ -3,18 +3,6 @@
 ## Introduction
 This project uses the Object Model Page test pattern and the Cypress test framework to perform tests on the e2e layer.
 
-## Challenge description
-
-Create a simple framework and show organization of the automation framework. Please
-try to show as much as possible, while keeping it relatively simple.
-What will be graded:
-1. Using test automation patterns(preferably page object model)
-2. Code reusability
-3. Clean code and coverage
-4. Documentation how to run tests (Readme is must)
-5. Organization of tests
-6. Tests pass/fail as expected
-
 ## Setup
 
 ### Development setup
@@ -37,6 +25,18 @@ Or, if you prefer to run the tests in the cypress dashboard, run:
 ```
 npm run test:cy
 ```
+
+## Challenge description
+
+Create a simple framework and show organization of the automation framework. Please
+try to show as much as possible, while keeping it relatively simple.
+What will be graded:
+1. Using test automation patterns(preferably page object model)
+2. Code reusability
+3. Clean code and coverage
+4. Documentation how to run tests (Readme is must)
+5. Organization of tests
+6. Tests pass/fail as expected
 
 ### Tests code resolution
 
