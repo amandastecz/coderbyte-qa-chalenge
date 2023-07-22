@@ -55,4 +55,20 @@ describe('Product', () => {
         cy.get(cartPage.diplayThankYouPurchase).should('be.visible');
         cartPage.validateConfirmationPopupInfo(order);
     });
+
+
+    it('should click in which category and navigate through it, checking the corresponding products', () =>{
+        let category = "Phones";
+        let product = "Samsung galaxy s6";
+        productsPage.chooseProductCategory(category);
+        productsPage.checkIfProductExist(product);
+        category = "Laptops";
+        product = "Sony vaio i5";
+        productsPage.chooseProductCategory(category);
+        productsPage.checkIfProductExist(product);
+        category = "Monitors";
+        product = "Apple monitor 24";
+        productsPage.chooseProductCategory(category);
+        productsPage.checkIfProductExist(product);
+    });
 });

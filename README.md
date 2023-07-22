@@ -47,6 +47,15 @@ About "Test 1" requirements:
 - [X] (/e2e/login.cy.js) should display a error message and not login the customer when try to login with an invalid credentials
 
 About "Test 2" requirements:
+- [x] (/e2e/product.cy.js) should add one or more products into the cart and place an order
+
+About "Test 3" requirements: 
+- [x] (/e2e/product.cy.js) should place an order and validate if charged information is correct in confirmation popup
+
+About "Test 4" requirements:
+- [X] (/e2e/product.cy.js) should click in which category and navigate through it, checking the corresponding products
+
+Note: in test 4 it mentions about subcategories, but there are no subcategories in the menu, only 3 main categories, in this way, the test goes until to step 3 of the requirements.
 
 ## About the Author
 
